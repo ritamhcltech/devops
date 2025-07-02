@@ -1,0 +1,17 @@
+name: First Workflow
+ 
+on: push
+ 
+jobs: 
+  First-job: 
+    runs-on: ubantu-latest
+    steps:
+      - name: Checkout code 
+        uses: actions/checkout@v4.2.2
+      - name: Setup Java JDK
+        uses: actions/setup-java@v3.14.1
+        with:
+          java-version: '17'
+          distribution: 'microsoft'
+      - name: check Java installed
+        run: echo java --version
